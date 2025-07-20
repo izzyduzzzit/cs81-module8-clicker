@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>🍪 Cookie Clicker 🍪</title>
+  <!-- Background color will be changed when milestones have been reached for creativity -->
   <style>
     body {
       text-align: center;
@@ -30,33 +31,54 @@
 <body>
 
   <h1>🍪 Cookie Clicker 🍪</h1>
+
+  <!-- Initializing HTML button and div elements for the cookie clicker tracker -->
   <button id="cookieBtn">Click me!</button>
-  <div id="counter">Cookie counter: 0</div>
-  <div id="message"></div>
+  <div id="counter">Cookie counter: 0</div> <!-- Click tracker cookie counter result -->
+  <div id="message"></div> <!-- Milestone message display area -->
 
   <script>
+    // Initializing count variable to track button clicks
     let count = 0;
 
+    // Initializing button, counter, and message contants to access HTML elements
     const button = document.getElementById("cookieBtn");
     const counterDisplay = document.getElementById("counter");
     const messageDisplay = document.getElementById("message");
 
+    // Adding event listener to the button to increment the counter and update display elements upon each click
     button.addEventListener("click", () => {
+      // Increment the count variable when button is clicked
       count++;
+      // Update the counter display text
       counterDisplay.textContent = `Cookies: ${count}`;
+      // Check for milestones using the updateMessageAndBackground function, and update message and background color accordingly
       updateMessageAndBackground(count);
     });
 
+    // Function to update milestone messages and background colors based on the current count
     function updateMessageAndBackground(count) {
+      // If count is 10 or more, display a special message and change background color to light yellow
       if (count === 10) {
         messageDisplay.textContent = "🍪 You have ten cookies!";
         document.body.style.backgroundColor = "#fef3c7";
+      // If count is 15, display a special message and change background color to light orange
+      } else if (count === 15) {
+        messageDisplay.textContent = "🍪🍪 Fifteen cookies, you must be getting full!";
+        document.body.style.backgroundColor = "#fde68a";
+      // If count is 25, display a special message and change background color to light blue
       } else if (count === 25) {
         messageDisplay.textContent = "😲 Twenty-five is a lot of cookies!";
         document.body.style.backgroundColor = "#c7f0fe";
+      // If count is 50, display a special message and change background color to light purple
       } else if (count === 50) {
         messageDisplay.textContent = "⏳ Wow! Fifty is way too many cookies!";
         document.body.style.backgroundColor = "#e0c7fe";
+      // If count is 75, display a special message and change background color to light pink
+      } else if (count === 75) {
+        messageDisplay.textContent = "😵 Seventy-five cookies?! Slow down!";
+        document.body.style.backgroundColor = "#fbc7fe";
+      // If count is 100, display a winning message and change background color to light green
       } else if (count === 100) {
         messageDisplay.textContent = "🏆 You won already, maybe leave some cookies for everyone else.";
         document.body.style.backgroundColor = "#d1fae5";
