@@ -46,6 +46,22 @@
       counterDisplay.textContent = `Cookies: ${count}`;
       updateMessageAndBackground(count);
     });
+
+    function updateMessageAndBackground(count) {
+      if (count === 10) {
+        messageDisplay.textContent = "🍪 You have ten cookies!";
+        document.body.style.backgroundColor = "#fef3c7";
+      } else if (count === 25) {
+        messageDisplay.textContent = "😲 Twenty-five is a lot of cookies!";
+        document.body.style.backgroundColor = "#c7f0fe";
+      } else if (count === 50) {
+        messageDisplay.textContent = "⏳ Wow! Fifty is way too many cookies!";
+        document.body.style.backgroundColor = "#e0c7fe";
+      } else if (count === 100) {
+        messageDisplay.textContent = "🏆 You won already, maybe leave some cookies for everyone else.";
+        document.body.style.backgroundColor = "#d1fae5";
+      }
+    }
   </script>
 
 </body>
