@@ -35,6 +35,17 @@
   <div id="message"></div>
 
   <script>
+    let count = 0;
+
+    const button = document.getElementById("cookieBtn");
+    const counterDisplay = document.getElementById("counter");
+    const messageDisplay = document.getElementById("message");
+
+    button.addEventListener("click", () => {
+      count++;
+      counterDisplay.textContent = `Cookies: ${count}`;
+      updateMessageAndBackground(count);
+    });
   </script>
 
 </body>
